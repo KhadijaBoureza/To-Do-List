@@ -35,22 +35,8 @@ function showTask(){
     list.innerHTML = localStorage.getItem("data");
 }
 
-showTask();
-
-let hrs = document.getElementById("hrs");
-let min = document.getElementById("min");
-let sec = document.getElementById("sec");
 
 
-
-function toggleTodoList() {
-    var listContainer = document.getElementById("list-container");
-    if (listContainer.style.display === "none") {
-        listContainer.style.display = "block";
-    } else {
-        listContainer.style.display = "none";
-    }
-}
 
 
 
