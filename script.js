@@ -24,7 +24,6 @@ list.addEventListener("click",function (e) {
         e.target.parentElement.remove();
         saveData();
     }
-
     
 },false);
 
@@ -34,6 +33,31 @@ function saveData(){
 function showTask(){
     list.innerHTML = localStorage.getItem("data");
 }
+// Update time every second
+let hrs = document.getElementById("hrs");
+let min = document.getElementById("min");
+let sec = document.getElementById("sec");
+
+setInterval(() => {
+    let currentTime = new Date();
+
+    // Get hours, minutes, and seconds
+    let hours = currentTime.getHours();
+    let minutes = currentTime.getMinutes();
+    let seconds = currentTime.getSeconds();
+
+    // Pad single digits with leading zeros
+    hours = String(hours).padStart(2, '0');
+    minutes = String(minutes).padStart(2, '0');
+    seconds = String(seconds).padStart(2, '0');
+
+    // Update HTML elements with padded values
+    hrs.innerHTML = hours;
+    min.innerHTML = minutes;
+    sec.innerHTML = seconds;
+}, 1000);
+
+
 
 
 
